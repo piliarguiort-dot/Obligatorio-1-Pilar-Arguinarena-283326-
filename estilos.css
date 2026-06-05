@@ -1,0 +1,710 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
+
+/* VARIABLES
+   Solo definí el rojo ya que despues solo uso blanco y negro */
+:root {
+    --primary: rgb(229, 36, 58);
+}
+
+/* CONFIGURACIÓN GENERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* 
+   TIPOGRAFÍAS Y ESTILOS GENERALES
+   Se separan las familias tipográficas: Oswald para títulos
+   e Inter para textos, enlaces y formulario. */
+
+h1,
+h2,
+h3 {
+    font-family: "Oswald", sans-serif;
+}
+
+p,
+a,
+form {
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-transform: uppercase;
+}
+
+/* MAIN Y SECTION GENERAL */
+main {
+    width: 80%;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 3.5em;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 1.4em;
+    background-color: white;
+    box-shadow: 3px 1px 10px 6px rgba(0, 0, 0, .03);
+    width: 90%;
+    border-radius: 3em;
+    margin: auto;
+    position: fixed;
+    z-index: 100000;
+    top: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#logo img {
+    width: 60px;
+}
+
+#hamburguesa img {
+    width: 35px;
+}
+
+nav {
+    display: none;
+}
+
+/* HERO*/
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(img/fondook2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#hero div {
+    width: 85%;
+    margin: auto;
+}
+
+#hero h1 {
+    font-size: 3em;
+    line-height: 0.9;
+    text-transform: uppercase;
+    color: white;
+}
+
+.rojohero {
+    color: var(--primary);
+    font-size: 1.5em;
+}
+
+#hero div a {
+    color: white;
+    background-color: var(--primary);
+    padding: 0.5em 1.3em;
+    border-radius: 10em;
+    display: inline-block;
+    margin-top: 0.8em;
+    border: 1px solid white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#hero p {
+    display: none;
+}
+
+/* FORMULARIO*/
+#formulario {
+    background-color: var(--primary);
+    padding: 2em;
+    border-radius: 2em;
+    color: white;
+    margin: 0 auto 3em;
+    width: 80%;
+}
+
+#formulario h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 0.3em;
+    text-transform: uppercase;
+    line-height: 1em;
+}
+
+#formulario p {
+    text-align: center;
+    margin-bottom: 1.5em;
+    line-height: 1.3;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 0.7em;
+    border-radius: 2em;
+    border: none;
+    margin-bottom: 1em;
+    font-family: "Inter", sans-serif;
+}
+
+input:focus,
+select:focus {
+    outline: 3px solid #000000;
+}
+
+input[type="submit"] {
+    background-color: #1f1e1e;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+    border: 2px solid transparent;
+}
+
+/*TÍTULOS DE SECCIONES*/
+#info h1 {
+    margin-bottom: 0.2em;
+    text-transform: uppercase;
+    font-size: 2.1em;
+    text-align: center;
+}
+
+#metas h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.2em;
+    text-transform: uppercase;
+    font-size: 2.1em;
+}
+
+/* SECCIÓN INFO */
+#info {
+    display: grid;
+    gap: 1em;
+}
+
+#info article {
+    width: 100%;
+    min-height: 350px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#info article img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#info article h2 {
+    line-height: 1.1;
+    margin-bottom: 0.3em;
+    font-size: 1.7em;
+}
+
+/* ARTICLES ROJOS */
+#info article:nth-of-type(1),
+#info article:nth-of-type(5) {
+    background-color: var(--primary);
+    color: white;
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 1.3em;
+}
+
+/* Tamaño específico para íconos dentro de articles rojos. */
+#info article:nth-of-type(1) img {
+    width: 150px;
+    height: auto;
+    margin: auto;
+}
+
+#info article:nth-of-type(5) img {
+    width: 210px;
+    height: auto;
+    margin: auto;
+}
+
+.numero {
+    font-size: 1.8em;
+}
+
+/* Article 3 con texto superpuesto sobre imagen. */
+#info article:nth-of-type(3) {
+    position: relative;
+}
+
+#info article:nth-of-type(3) div {
+    position: absolute;
+    z-index: 1000;
+    bottom: 2rem;
+    left: 1rem;
+}
+
+#info article:nth-of-type(3) h2 {
+    color: white;
+}
+
+#info article:nth-of-type(3) a {
+    color: white;
+    background-color: var(--primary);
+    padding: 0.5em 1.3em;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 0.8em;
+    font-weight: bold;
+    border: 1px solid white;
+    transition: 0.3s;
+}
+
+/* Article 4 oculto en mobile: aparece más adelante en tablet. */
+#info article:nth-of-type(4) {
+    display: none;
+}
+
+/* SECCIÓN METAS*/
+#metas {
+    display: grid;
+    gap: 1em;
+}
+
+#metas article {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+#metas article img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#metas article:nth-of-type(n+1) div {
+    padding: 1.5em;
+}
+
+#metas h2 {
+    font-size: 2.2em;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+.rojo2 {
+    color: var(--primary);
+}
+
+#metas a {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 0.5em 1.5em;
+    border-radius: 30px;
+    margin-top: 1em;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#metas article>p {
+    display: none;
+}
+
+#metas article:nth-of-type(4) img,
+#metas article:nth-of-type(5) img {
+    display: none;
+}
+
+/*FOOTER*/
+footer {
+    text-align: center;
+    box-shadow: 3px 1px 10px 6px rgba(0, 0, 0, .08);
+    padding: 2em;
+}
+
+footer p {
+    margin-bottom: 0.7em;
+    font-weight: 600;
+}
+
+footer img {
+    width: 30px;
+    margin: 0 0.7em;
+}
+
+/* TABLET */
+@media all and (min-width:768px) {
+
+/* Ajustes generales */
+main {
+    width: initial;
+ }
+
+p {
+    font-size: 1.1em;
+}
+
+/* HEADER Y NAVEGACIÓN */
+header {
+    padding: 1em 2em;
+}
+
+#logo img {
+    width: 70px;
+}
+
+#hamburguesa {
+    display: none;
+}
+
+nav {
+    display: block;
+}
+
+nav a {
+    color: var(--primary);
+    padding: 1em;
+    font-weight: 700;
+    font-size: 1.3em;
+    transition: 0.3s;
+    border-radius: 30px;
+}
+
+/* HERO */
+#hero h1 {
+    font-size: 4.2em;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+#hero div a {
+    font-size: 1.2em;
+}
+
+/* FORMULARIO */
+#formulario h2 {
+    font-size: 2.5em;
+}
+
+#formulario form {
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+#formulario input[type="submit"] {
+    width: auto;
+    padding: 0.7em 2em;
+}
+
+/* Títulos de secciones */
+    #info h1,
+    #metas h1 {
+    font-size: 3.3em;
+}
+
+#info h1 {
+    grid-column: span 2;
+}
+
+#metas h1 {
+    grid-column: span 2;
+}
+
+/* SECCIÓN INFO */
+#info {
+    grid-template-columns: 1fr 1fr;
+    width: 93%;
+    margin: 0 auto 3.5em;
+}
+
+#info article:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#info article:nth-of-type(2) img {
+    object-position: 35% 20%;
+}
+
+#info article:nth-of-type(3) {
+    grid-row: span 2;
+}
+
+#info article:nth-of-type(3) h2 {
+    width: 80%;
+}
+
+/* El article 4 aparece en tablet y ocupa dos columnas */
+#info article:nth-of-type(4) {
+    display: block;
+    grid-column: span 2;
+    height: 400px;
+    position: relative;
+}
+
+#info article:nth-of-type(4) div {
+    position: absolute;
+    z-index: 1000;
+    bottom: 2rem;
+    left: 1rem;
+    width: 60%;
+    padding: 1em;
+    border-radius: 20px;
+    background-color: rgba(229, 36, 58, 0.8);
+    }
+
+#info article:nth-of-type(4) h2 {
+    color: white;
+}
+
+#info article:nth-of-type(4) p {
+    color: white;
+}
+
+/*SECCIÓN METAS*/
+#metas {
+    grid-template-columns: 1fr 1fr;
+    max-width: 80%;
+    margin: 0 auto 3.5em;
+}
+
+#metas article img {
+    height: 250px;
+}
+
+#metas article:nth-of-type(-n+3) {
+    grid-row: span 2;
+}
+
+#metas article{
+    position: relative;
+    padding-bottom: 3.5em;
+}
+
+#metas article a{
+    position: absolute;
+    bottom: 1em;
+}
+
+/* FOOTER */
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3em;
+}
+
+footer p {
+    margin-bottom: 0;
+    font-size: 1.2em;
+}
+
+}
+
+
+/* DESKTOP */
+@media all and (min-width: 1200px) {
+
+/* HERO */
+#hero {
+    position: relative;
+}
+
+#hero p {
+    color: white;
+    margin-top: 0.9em;
+    display: block;
+}
+
+#hero h1 {
+    font-size: 5em;
+}
+
+#hero div a {
+    font-size: 1.4em;
+}
+
+#hero div a:hover {
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* NAV */
+nav a:hover {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 30px;
+}
+
+/* FORMULARIO */
+#formulario {
+    position: absolute;
+    right: 8%;
+    bottom: -4%;
+    width: 28%;
+    margin: 0;
+}
+
+#formulario form {
+    display: block;
+}
+
+#formulario input,
+#formulario select {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#formulario input[type="submit"] {
+    width: 100%;
+}
+
+#formulario input[type="submit"]:hover {
+    border: 2px solid white;
+}
+
+/* Títulos de secciones */
+#info h1 {
+    grid-column: span 4;
+}
+
+#metas h1,
+#info h1 {
+    font-size: 4.5em;
+}
+
+#metas h1 {
+    width: 100%;
+}
+
+/* SECCION INFO*/
+#info {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 98%;
+    margin: 0 auto 3.5em;
+}
+
+#info article {
+    filter: grayscale(100%) brightness(70%);
+    transition: 0.3s;
+}
+
+#info article:hover {
+    filter: grayscale(0%);
+}
+
+#info article h2 {
+    font-size: 2em;
+}
+
+#info article:nth-of-type(4) div {
+    padding: 1em;
+    border-radius: 20px;
+    transition: 0.3s;
+    background-color: transparent;
+}
+
+#info article:nth-of-type(4):hover div {
+    background-color: rgba(229, 36, 58, .9);
+}
+
+#info article:nth-of-type(3) a:hover {
+    padding: 0.5em 2.5em;
+}
+
+/* En desktop los contenidos de los articles rojos aparecen al hacer hover */
+#info article:nth-of-type(1) img,
+#info article:nth-of-type(1) div {
+    opacity: 0;
+    transition: .3s;
+}
+
+#info article:nth-of-type(1):hover img,
+#info article:nth-of-type(1):hover div {
+    opacity: 1;
+}
+
+#info article:nth-of-type(5) img,
+#info article:nth-of-type(5) div {
+    opacity: 0;
+    transition: .3s;
+    }
+
+#info article:nth-of-type(5):hover img,
+#info article:nth-of-type(5):hover div {
+    opacity: 1;
+    }
+
+/* SECCIÓN METAS */
+#metas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1300px;
+}
+
+#metas article {
+        width: 30%;
+        box-shadow: none;
+}
+  
+#metas article:hover {
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.3);
+}
+
+#metas article img {
+    height: 270px;
+}
+
+#metas article:nth-of-type(4) img,
+#metas article:nth-of-type(5) img {
+    display: block;
+}
+
+#metas article:nth-of-type(5) img {
+    object-position: 50% 20%;
+}
+
+#metas article a:hover {
+    padding: 0.5em 3em;
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Aparecen los p */
+#metas article>p {
+    display: block;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+}
+
+/* FOOTER */
+footer img:hover{
+opacity: 0.7;
+}
+
+}
+
